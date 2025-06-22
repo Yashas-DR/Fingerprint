@@ -22,3 +22,4 @@ wtforms
 
 # Specific version to avoid Werkzeug conflicts with Flask-WTF
 werkzeug==2.3.7
+gdown

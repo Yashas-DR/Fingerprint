@@ -10,6 +10,10 @@ import google.generativeai as genai
 import io
 from dotenv import load_dotenv
 load_dotenv()
+import gdown
+MODEL_PATH = "fingerprint_blood_group_model.pkl"
+MODEL_DRIVE_ID = "1AAmwHURkbS4vmfYNRtmXofRs4bB6T3JT"
+
 # Initialize Flask app
 app = Flask(__name__, template_folder='templates')
 app.secret_key = 'your_secret_key'
@@ -66,8 +70,13 @@ class SimpleCNN(torch.nn.Module):
         x = self.fc2(x)
         return x
 
+# Download model from Google Drive if not found locally
+if not os.path.exists(MODEL_PATH):
+    print("🔽 Downloading model file from Google Drive...")
+    gdown.download(id=MODEL_DRIVE_ID, output=MODEL_PATH, quiet=False)
+    
 model = SimpleCNN()
-model.load_state_dict(torch.load('fingerprint_blood_group_model.pkl', map_location=torch.device('cpu')))
+model.load_state_dict(torch.load(MODEL_PATH, map_location=torch.device('cpu')))
 model.eval()
 
 data_transform = transforms.Compose([
