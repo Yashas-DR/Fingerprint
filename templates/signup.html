@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>SignUp</title>
+
+  <!-- Favicons -->
+  <link href="../static/img/orange.png" rel="icon">
+  <link href="../static/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="../static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../static/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../static/vendor/aos/aos.css" rel="stylesheet">
+  <link href="../static/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="../static/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="../static/css/main.css" rel="stylesheet">
+
+  <style>
+    /* Global Styles */
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Header Styles */
+    .header {
+      background-color: #fff;
+      padding: 15px 0;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .header .logo h1 {
+      font-family: 'Lato', sans-serif;
+      color: #333;
+      margin-left: 10px;
+      font-size: 32px;
+      font-weight: 600;
+    }
+
+    .navmenu ul {
+      display: flex;
+      justify-content: flex-end;
+      gap: 30px;
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .navmenu li a {
+      font-size: 16px;
+      color: #555;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: color 0.3s ease;
+    }
+
+    .navmenu li a:hover,
+    .navmenu li a.active {
+      color: #FF6F61;
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 80px 0;
+      background-color: #FFFBF1;
+      text-align: center;
+      position: relative;
+      animation: fadeIn 1s ease-out;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    .hero h1 {
+      font-size: 45px;
+      color: #333;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: #555;
+      margin-bottom: 40px;
+    }
+
+    .hero img {
+      max-width: 70%;
+      height: auto;
+      margin-top: 30px;
+      animation: zoomIn 1s ease-out;
+    }
+
+    @keyframes zoomIn {
+      from {
+        transform: scale(0.9);
+        opacity: 0;
+      }
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    /* Signup Form Section */
+    .signup-container {
+      background-color: #ffffff;
+      padding: 40px 35px;
+      border-radius: 15px;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+      max-width: 500px;
+      margin: 80px auto;
+      animation: fadeIn 1s ease-out;
+    }
+
+    .signup-container h2 {
+      text-align: center;
+      font-size: 30px;
+      color: #333;
+      margin-bottom: 25px;
+      font-weight: 600;
+    }
+
+    .signup-container label {
+      font-size: 14px;
+      font-weight: 500;
+      color: #333;
+      margin-bottom: 8px;
+      display: inline-block;
+    }
+
+    .signup-container input[type="text"],
+    .signup-container input[type="email"],
+    .signup-container input[type="password"] {
+      width: 100%;
+      padding: 14px;
+      margin-bottom: 20px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      font-size: 16px;
+      transition: border 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .signup-container input[type="text"]:focus,
+    .signup-container input[type="email"]:focus,
+    .signup-container input[type="password"]:focus {
+      border-color: #FF6F61;
+      box-shadow: 0 0 10px rgba(255, 111, 97, 0.2);
+      outline: none;
+    }
+
+    .signup-container input[type="submit"] {
+      width: 100%;
+      padding: 16px;
+      background-color: #FF6F61;
+      color: #fff;
+      font-size: 18px;
+      font-weight: bold;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .signup-container input[type="submit"]:hover {
+      background-color: #FF5733;
+      transform: translateY(-3px);
+    }
+
+    .signup-container .login-link {
+      text-align: center;
+      margin-top: 15px;
+      font-size: 14px;
+      color: #777;
+    }
+
+    .signup-container .login-link a {
+      color: #FF6F61;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .signup-container .login-link a:hover {
+      text-decoration: underline;
+    }
+
+    /* Back Button */
+    .back {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+    }
+
+    .back a {
+      font-size: 18px;
+      color: #333;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .back a:hover {
+      text-decoration: underline;
+    }
+
+    /* Scroll Top Button */
+    #scroll-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background-color: #FF6F61;
+      color: #fff;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      font-size: 20px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    #scroll-top:hover {
+      background-color: #FF5733;
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+      .signup-container {
+        padding: 30px 25px;
+      }
+
+      .hero h1 {
+        font-size: 40px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+    }
+  </style>
+
+</head>
+
+<body class="index-page">
+  <!-- Header Section -->
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center">
+      <a href="/home" class="logo d-flex align-items-center me-auto">
+        <img src="../static/img/log.png" alt="">
+        <h1 class="sitename">Bloodgroup Prediction</h1>
+      </a>
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="/home" >Home</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/team">Team</a></li>
+          <li><a href="/login">Login</a></li>
+          <li><a href="/signup" class="active">Sign Up</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+<section id="hero" class="hero">
+  <div class="container text-center">
+    <br>
+    <h1 data-aos="fade-up">Get <span>Access to Proceed</span></h1>
+    <p data-aos="fade-up" data-aos-delay="100">Your data will be kept safe with us and will not be shared with third parties.</p>
+    <img src="../static/img/sign.webp" class="img-fluid hero-img" alt="" data-aos="zoom-out" data-aos-delay="300">
+  </div>
+</section>
+
+  <!-- Back Button -->
+  <div class="back">
+    <a href="/">Back</a>
+  </div>
+
+  <!-- Signup Form Section -->
+  <div class="signup-container">
+    <h2>Sign Up</h2>
+    <form action="/signup" method="post">
+      <label for="fullname">Full Name</label>
+      <input type="text" id="fullname" name="fullname" required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="username">Username</label>
+      <input type="text" id="username" name="username" required>
+
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" required>
+
+      <label for="confirmpassword">Confirm Password</label>
+      <input type="password" id="confirmpassword" name="confirmpassword" required>
+
+      <input type="submit" value="Sign Up">
+    </form>
+    <div class="login-link">
+      <p>Already have an account? <a href="/login">Login</a></p>
+    </div>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        <ul class=flashes>
+          {% for category, message in messages %}
+            <li class="{{ category }}">{{ message }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+  </div>
+
+  <!-- Scroll Top Button -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="../static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../static/vendor/php-email-form/validate.js"></script>
+  <script src="../static/vendor/aos/aos.js"></script>
+  <script src="../static/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="../static/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="../static/js/main.js"></script>
+</body>
+
+</html>

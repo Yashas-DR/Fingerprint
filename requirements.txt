@@ -1,0 +1,24 @@
+Flask
+gunicorn
+python-dotenv
+google-generativeai
+
+# ML & Deep Learning
+torch
+torchvision
+torchaudio
+tensorflow
+keras
+scikit-learn
+pandas
+numpy
+Pillow
+opencv-python
+scikit-image
+
+# Web Forms
+flask-wtf
+wtforms
+
+# Specific version to avoid Werkzeug conflicts with Flask-WTF
+werkzeug==2.3.7
