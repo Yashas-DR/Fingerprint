@@ -71,13 +71,10 @@ class SimpleCNN(torch.nn.Module):
         return x
 
 # Download model from Google Drive if not found locally
-if not os.path.exists(MODEL_PATH):
-    print("🔽 Downloading model file from Google Drive...")
-    gdown.download(id=MODEL_DRIVE_ID, output=MODEL_PATH, quiet=False)
-    
 model = SimpleCNN()
-model.load_state_dict(torch.load(MODEL_PATH, map_location=torch.device('cpu')))
+model.load_state_dict(torch.load('fingerprint_blood_group_model.pkl', map_location=torch.device('cpu')))
 model.eval()
+
 
 data_transform = transforms.Compose([
     transforms.Resize((224, 224)),
