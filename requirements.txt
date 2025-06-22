@@ -7,7 +7,8 @@ google-generativeai
 torch
 torchvision
 torchaudio
-tensorflow
+tensorflow==2.13.0
+
 keras
 scikit-learn
 pandas
